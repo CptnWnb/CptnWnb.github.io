@@ -1,0 +1,81 @@
+{
+	"name": "htmlhint",
+	"displayName": "HTMLHint",
+	"description": "VS Code integration for HTMLHint - A Static Code Analysis Tool for HTML",
+	"icon": "images/HTMLHint.png",
+	"version": "0.0.1",
+	"publisher": "ctf0",
+	"repository": "https://github.com/ctf0/vscode-htmlhint/tree/master/htmlhint",
+	"categories": [
+		"Programming Languages",
+		"Linters"
+	],
+	"engines": {
+		"vscode": "^1.16.0"
+	},
+	"activationEvents": [
+		"onFileSystem:file"
+	],
+	"main": "./out/extension",
+	"contributes": {
+		"configuration": {
+			"type": "object",
+			"title": "HTML-Hint configuration",
+			"properties": {
+				"htmlhint.enable": {
+					"type": "boolean",
+					"default": true,
+					"description": "Control whether htmlhint is enabled for HTML files or not."
+				},
+				"htmlhint.documentSelector": {
+					"type": "array",
+					"default": [
+						"html",
+						"blade",
+						"vue-html",
+						"twig"
+					],
+					"items": {
+						"type": "string"
+					},
+					"description": "The associated document types to be linted."
+				},
+				"htmlhint.options": {
+					"type": "object",
+					"default": {},
+					"description": "The htmlhint options object to provide args to the htmlhint command."
+				},
+				"htmlhint.optionsFile": {
+					"type": "string",
+					"default": null,
+					"description": "The htmlhint options config file path"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "node ./node_modules/typescript/bin/tsc -p ./",
+		"compile": "node ./node_modules/typescript/bin/tsc -p ./",
+		"watch": "node ./node_modules/typescript/bin/tsc -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install"
+	},
+	"devDependencies": {
+		"typescript": "^2.5.2",
+		"vscode": "^1.1.5",
+		"@types/node": "^6.0.41"
+	},
+	"dependencies": {
+		"vscode-languageclient": "^3.4.0"
+	},
+	"__metadata": {
+		"id": "587a8e5f-82bc-4ee0-940e-f1b8c6750935",
+		"publisherId": "83d4da56-3e02-4029-b926-a215a8fd071b",
+		"publisherDisplayName": "ctf0",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"preRelease": false,
+		"installedTimestamp": 1659714604608
+	}
+}
